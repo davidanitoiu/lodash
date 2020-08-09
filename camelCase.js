@@ -21,6 +21,9 @@ import toString from './toString.js'
  *
  * camelCase('__FOO_BAR__')
  * // => 'fooBar'
+ * 
+ * camelCase('FooBARs',/([A-Z][a-z]+)(\w+)/)
+ * // => 'fooBars'
  */
 const camelCase = (string, pattern) => {
   const splitWords = words(toString(string).replace(/['\u2019]/g, ''), pattern)
