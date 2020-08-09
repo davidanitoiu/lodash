@@ -8,6 +8,7 @@ import toString from './toString.js'
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to convert.
+ * @param {RegExp|string} [pattern] The pattern to match words.
  * @returns {string} Returns the kebab cased string.
  * @see camelCase, lowerCase, snakeCase, startCase, upperCase, upperFirst
  * @example
