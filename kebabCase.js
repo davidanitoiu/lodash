@@ -21,10 +21,10 @@ import toString from './toString.js'
  *
  * kebabCase('__FOO_BAR__')
  * // => 'foo-bar'
- * 
+ *
  * kebabCase('FOOBARv1.0',/([A-Z]+)(v)(\d).(\d)/)
  * // => 'foobar-v-1-0'
- * 
+ *
  * kebabCase('FooBARs',/([A-Z][a-z]+)(\w+)/)
  * // => 'foo-bars'
  */
