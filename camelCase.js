@@ -21,7 +21,7 @@ import toString from './toString.js'
  *
  * camelCase('__FOO_BAR__')
  * // => 'fooBar'
- * 
+ *
  * camelCase('FooBARs',/([A-Z][a-z]+)(\w+)/)
  * // => 'fooBars'
  */
