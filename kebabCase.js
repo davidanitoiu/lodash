@@ -21,10 +21,12 @@ import toString from './toString.js'
  * kebabCase('__FOO_BAR__')
  * // => 'foo-bar'
  */
-const kebabCase = (string) => (
-  words(toString(string).replace(/['\u2019]/g, '')).reduce((result, word, index) => (
-    result + (index ? '-' : '') + word.toLowerCase()
-  ), '')
-)
+
+const kebabCase = (string, pattern) => {
+  const splitWords = words(toString(string).replace(/['\u2019]/g, ''), pattern)
+  const wordsToJoin = pattern ? splitWords.slice(1) : splitWords
+
+  return wordsToJoin.join('-').toLowerCase()
+}
 
 export default kebabCase
