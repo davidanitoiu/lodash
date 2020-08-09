@@ -28,5 +28,5 @@ describe('camelCase', function() {
     lodashStable.each(['XMLHttpRequest', 'XmlHTTPRequest'], function(string) {
       assert.strictEqual(camelCase(string), 'xmlHttpRequest');
     });
-  })
+  });
 });
