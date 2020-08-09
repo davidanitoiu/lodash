@@ -24,6 +24,12 @@ import toString from './toString.js'
  *
  * snakeCase('foo2bar')
  * // => 'foo_2_bar'
+ * 
+ * snakeCase('FOOBARv1.0',/([A-Z]+)(v)(\d).(\d)/)
+ * // => 'foobar_v_1_0'
+ * 
+ * snakeCase('FooBARs',/([A-Z][a-z]+)(\w+)/)
+ * // => 'foo_bars'
  */
 const snakeCase = (string, pattern) => {
   const splitWords = words(toString(string).replace(/['\u2019]/g, ''), pattern)
