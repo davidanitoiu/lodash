@@ -8,6 +8,7 @@ import toString from './toString.js'
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to convert.
+ * @param {RegExp|string} [pattern] The pattern to match words.
  * @returns {string} Returns the snake cased string.
  * @see camelCase, lowerCase, kebabCase, startCase, upperCase, upperFirst
  * @example
@@ -24,10 +25,11 @@ import toString from './toString.js'
  * snakeCase('foo2bar')
  * // => 'foo_2_bar'
  */
-const snakeCase = (string) => (
-  words(toString(string).replace(/['\u2019]/g, '')).reduce((result, word, index) => (
-    result + (index ? '_' : '') + word.toLowerCase()
-  ), '')
-)
+const snakeCase = (string, pattern) => {
+  const splitWords = words(toString(string).replace(/['\u2019]/g, ''), pattern)
+  const wordsToJoin = pattern ? splitWords.slice(1) : splitWords
+
+  return wordsToJoin.join('_').toLowerCase()
+}
 
 export default snakeCase
